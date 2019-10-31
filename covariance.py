@@ -1,6 +1,5 @@
 import numpy as np
-
-datatest = np.array([[1, 1, 1], [1, 2, 1], [1, 3, 2], [1, 4, 3]])
+import pandas as pd
 
 def mean_calc(data, pos):
     '''Calaculates the mean given a dataset(list of lists) and position variable.
@@ -48,5 +47,11 @@ def cov_matrix_calculation(data):
     cov_matx = np.cov(data.T)
     return cov_matx
 
-print(cov_matrix(datatest))
-print(cov_matrix_calculation(datatest))
+if __name__ == '__main__':
+    df = pd.read_csv('Graduate_Admissions.csv')
+    df_get = df[['GRE Score', 'TOEFL Score', 'University Rating']]
+    dataset = df_get.to_numpy()
+    test_data = np.array([[1, 1, 1], [1, 2, 1], [1, 3, 2], [1, 4, 3]])
+
+    print(cov_matrix(dataset))
+    print(cov_matrix_calculation(dataset))
