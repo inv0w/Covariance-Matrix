@@ -25,7 +25,7 @@ def covariance_calc(data, pos, pos2):
 
 def matrix_row(data, pos):
     '''Creates a list given a dataset and a position variable. Uses the covariance
-    calculation of the position and every
+    calculation and a matrix position.
     '''
     row = []
     for i in range(len(data[0])):
@@ -33,8 +33,8 @@ def matrix_row(data, pos):
     return row
 
 def cov_matrix(data):
-    '''Appends an array(row) to an empty array given the dimensions of the
-    dataset.
+    '''Appends an array(row) to an empty array(matrix grid) and defines the
+    size of the matrix from the size of the dataset.
     '''
     matrix = np.empty((0, len(data[0])), int)
     for i in range(len(data[0])):
