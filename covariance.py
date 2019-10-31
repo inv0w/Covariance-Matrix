@@ -47,6 +47,10 @@ def cov_matrix_calculation(data):
     cov_matx = np.cov(data.T)
     return cov_matx
 
+def test_covariance_calc():
+    arr = np.array([[1, 2], [3, 4]])
+    assert covariance_calc(arr, 0, 0) == np.var(?)
+
 if __name__ == '__main__':
     df = pd.read_csv('Graduate_Admissions.csv')
     df_get = df[['GRE Score', 'TOEFL Score', 'University Rating']]
